@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Aplikasi Multistep</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="restoreState()">
+  <!-- Halaman 1 -->
+  <div id="page1">
+    <h2>Masukkan nama lengkap mu semua hurufnya besar dan masukkan tanggal lahir mu contoh “1 Januari”</h2>
+    <input type="text" id="input1" placeholder="Nama lengkap"><br>
+    <input type="text" id="input2" placeholder="Tanggal lahir"><br>
+    <button onclick="checkPasswords()">Lanjut</button>
+    <p id="error" style="color:red"></p>
+  </div>
+
+  <!-- Halaman 2 -->
+  <div id="page2" class="hidden">
+    <h2>PERHATIAN</h2>
+    <p>Baca dengan teliti kolom ketiga pada halaman selanjutnya sebelum memilih ya cantik</p>
+    <button onclick="goToPage(3)">Saya Mengerti</button>
+  </div>
+
+  <!-- Halaman 3 -->
+  <div id="page3" class="hidden">
+    <h2>Hai sayang, eh Hai cantik atau sayang ya?</h2>
+    <p id="mainText">
+      Lupakan itu!<br>
+      Sebenarnya aku suka sama kamu dari dulu, tapi aku belum sempat ngungkapin. Maaf ya baru sekarang aku ngungkapin nya. Kamu pasti belum tau ini dari siapa ya, yang pasti bukan orang yang ngasih ini ke kamu. Klik ciri-ciri untuk mengetahui siapa aku.
+    </p>
+    <button id="mainBtn" onclick="showChoiceButtons()">Ciri-ciri</button>
+    <p id="afterMainText" class="hidden">
+      Aku itu tinggi, baik, pinter, kadang ngeselin, dan inisial ku huruf ke 23 setelah huruf T(vwxyzabc dan seterusnya hingga huruf ke 23).
+    </p>
+    <div id="countdownContainer" class="hidden">
+      <p id="countdownText"></p>
+    </div>
+    <div id="choiceButtons" class="hidden">
+      <button id="greenBtn" class="btn green button-lock" onclick="choose('green')">Iya</button>
+      <button id="redBtn" class="btn red button-lock" onclick="choose('red')">Tidak</button>
+    </div>
+    <p id="result"></p>
+    <hr>
+    <input type="text" id="resetCheck" placeholder="Reset">
+    <button id="resetBtn" class="btn yellow button-lock" onclick="resetAll()">Reset</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
